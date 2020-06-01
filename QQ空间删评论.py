@@ -71,16 +71,16 @@ browser=webdriver.Chrome(chrome_options=options)
 		fcookie.write(jscookie)
 		fcookie.close()
 '''
-browser.get("https://user.qzone.qq.com/3575679970/infocenter")
+browser.get("https://user.qzone.qq.com")
 input("登录之后点击回车")
 kkk=5
-
+qqurl=browser.current_url
 
 def del_sspl(browser):
 	global kkk
 	kkk=kkk-1
 	#input("登录之后点击回车1")
-	browser.get("https://user.qzone.qq.com/3575679970/infocenter")
+	browser.get(qqurl)
 	browser.implicitly_wait(10)
 	shuoshuo=browser.find_element_by_css_selector('div[class="layout-shop-item"]>div[class="shop-item cs"]>div[class="head-nav"]>ul[class="head-nav-menu"]>li[class="menu_item_311"]>a')
 	browser.execute_script("arguments[0].click();",shuoshuo)
